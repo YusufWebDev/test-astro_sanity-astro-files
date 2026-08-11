@@ -1,7 +1,38 @@
+---
+import { sanityClient } from "sanity:client";
+// import urlFor from "../utils/sanityImageUrl.js";
+import { createImageUrlBuilder } from "@sanity/image-url";
+import { intersection } from "astro:schema";
+
+// THIS IS TO GET THE IMAGE URL FROM SANITY TO SHOW ON THE PAGE.
+const builder = createImageUrlBuilder(sanityClient);
+
+function urlFor(source: any) {
+	return builder.image(source);
+}
+
+//Even though this only returns one image , you have to loop throuhgh it to displat the image using the urlFor Function
+//from the Sanity docs.
+const COMPANY_LOGO_QUERY = `*[_type == 'companyLogo']{name, image, alt_Text}`;
+const CompanyLogo = await sanityClient.fetch(COMPANY_LOGO_QUERY);
+console.log(CompanyLogo);
+
+interface logoDetails {
+	name: string;
+	image: string;
+	alt_Text: string;
+}
+---
+
 <header>
 	<div class="container">
 		<div>
-			<img src="" alt="Logo Image goes here" />
+			{
+				//you have to loop through the single row of data to get the url for the image.
+				CompanyLogo.map((logo: logoDetails) => (
+					<img src={urlFor(logo.image).width(300)} alt={logo.alt_Text} />
+				))
+			}
 		</div>
 		<nav class="nav">
 			<ul class="nav-list">
