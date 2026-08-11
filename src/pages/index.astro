@@ -3,30 +3,53 @@
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 import Layout from "../layouts/Layout.astro";
 import { sanityClient } from "sanity:client";
-import { createImageUrlBuilder } from '@sanity/image-url'
+import { createImageUrlBuilder } from "@sanity/image-url";
 
 // THIS IS TO GET THE IMAGE URL FROM SANITY TO SHOW ON THE PAGE.
-const builder = createImageUrlBuilder(sanityClient)
-function urlFor(source:any) {
-  return builder.image(source)
+const builder = createImageUrlBuilder(sanityClient);
+function urlFor(source: string) {
+	return builder.image(source);
 }
 
+interface Product {
+	name: string;
+	price: number;
+	description: string;
+	showOnSite: boolean;
+	image: string;
+	alt_Text: string;
+}
 // FETCHING ALL PRODUCT TYPES FROM SANITY.
 const PRODUCT_QUERY = `*[ _type == 'product']{name, price, description, showOnSite, image, alt_Text}`;
 const Products = await sanityClient.fetch(PRODUCT_QUERY);
 
-console.log(Products) 
-const filteredProdcts = Products.filter((p) => p.showOnSite === true)
-console.log(filteredProdcts)
-
+// console.log(Products)
+const filteredProdcts = Products.filter((p: Product) => p.showOnSite === true);
+// console.log(filteredProdcts)
 ---
 
 <Layout>
-	{filteredProdcts.map((p:any) => (
-		<h1>{p.name}</h1>
-		<img src={urlFor(p.image).width(350)} alt={p.alt_Text}>
-		<p>{p.showOnSite}</p>
-		<p>R{p.price}</p>
-		<p>{p.description}</p>
-	))}
+	<div class="grid-container">
+		<div class="grid">
+			{
+				filteredProdcts.map((p: Product) => (
+					<div class="card">
+						<div class="card-title">
+							<h2>{p.name}</h2>
+						</div>
+						<div class="card-image">
+							<img src={urlFor(p.image).width(350)} alt={p.alt_Text} />
+						</div>
+						{/* <p>{p.showOnSite}</p> */}
+						<div class="card-price">
+							<p>R {p.price}</p>
+						</div>
+						<div class="card-description">
+							<p>{p.description}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
 </Layout>

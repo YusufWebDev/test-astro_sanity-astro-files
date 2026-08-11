@@ -16,12 +16,14 @@
     "@sanity/client": "^7.26.2",
     "@sanity/image-url": "^2.1.1",
     "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.0",
     "astro-portabletext": "^0.13.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-is": "^19.2.8",
     "sanity": "^6.9.1",
-    "styled-components": "^6.5.0"
+    "styled-components": "^6.5.0",
+    "tailwindcss": "^4.3.3"
   }
 }
