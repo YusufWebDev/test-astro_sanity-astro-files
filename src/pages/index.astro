@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { sanityClient } from "sanity:client";
 import urlFor from "../utils/sanityImageUrl.js";
+import "../styles/global.css";
+import HeroSection from "../components/HeroSection.astro";
 
 interface Product {
 	name: string;
@@ -21,8 +23,9 @@ const filteredProdcts = Products.filter((p: Product) => p.showOnSite === true);
 ---
 
 <Layout>
+	<HeroSection />
 	<div class="grid-container">
-		<div class="grid">
+		<div class="product_grid">
 			{
 				filteredProdcts.map((p: Product) => (
 					<div class="card">
