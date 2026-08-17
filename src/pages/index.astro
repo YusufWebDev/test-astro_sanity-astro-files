@@ -4,6 +4,7 @@ import { sanityClient } from "sanity:client";
 import urlFor from "../utils/sanityImageUrl.js";
 import "../styles/global.css";
 import HeroSection from "../components/HeroSection.astro";
+import QuestionStatementBanner from "../components/QuestionStatementBanner.astro";
 
 interface Product {
 	name: string;
@@ -24,6 +25,9 @@ const filteredProdcts = Products.filter((p: Product) => p.showOnSite === true);
 
 <Layout>
 	<HeroSection />
+	<QuestionStatementBanner
+		questionStatement="Tired of struggling to see the road at night ?"
+	/>
 	<div class="grid-container">
 		<div class="product_grid">
 			{

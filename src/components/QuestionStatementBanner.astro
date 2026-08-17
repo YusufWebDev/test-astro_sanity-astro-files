@@ -1,0 +1,13 @@
+---
+interface Props {
+	questionStatement: string;
+}
+
+const { questionStatement = "no more dull headlights" } = Astro.props;
+---
+
+<div
+	class="max-w-80dvw mt-15 h-75 bg-amber-900amber-500 text-amber-300 rounded-2xl text-5xl flex flex-col text-center items-center justify-center uppercase font-bold"
+>
+	<h1>{questionStatement}</h1>
+</div>
