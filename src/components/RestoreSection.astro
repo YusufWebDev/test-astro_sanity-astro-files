@@ -1,3 +1,85 @@
-<div>
-	<h1></h1>
+---
+import vision from "../assets/nightvision.jpg";
+import save from "../assets/savemoney.jpg";
+import roadworthy from "../assets/roadworthyPass.png";
+import boost from "../assets/boost.jpg";
+import { Image } from "astro:assets";
+---
+
+<div
+	class="bg-blue-600 flex flex-col mt-20 gap-6 px-5 text-center justify-around"
+>
+	<h1 class="text-5xl font-bold">Why Restore Your Headlights ?</h1>
+	<section
+		class="w-full gap-5 text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+	>
+		<div
+			class="flex flex-col justify-center p-3 items-center bg-fuchsia-500 rounded-3xl w-full md:min-w-60 my-0 mx-auto"
+		>
+			<div class="h-30 w-30 mb-3 rounded-3xl overflow-hidden">
+				<Image
+					class="w-full"
+					src={vision}
+					alt=" save money with restoration at Cape Town Headlight Restoration"
+				/>
+			</div>
+			<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase">
+				Maximum Night Visibiliy
+			</h2>
+			<p class="inline-block w-full text-xl">
+				Clear lenses project upto 140% more light onto the road.
+			</p>
+		</div>
+		<div
+			class="flex flex-col text-center justify-center p-3 items-center bg-fuchsia-500 rounded-3xl w-full md:min-w-60 my-0 mx-auto"
+		>
+			<div class="h-30 w-30 mb-3 rounded-3xl overflow-hidden">
+				<Image
+					class="w-full"
+					src={roadworthy}
+					alt="save money with restoration at Cape Town Headlight Restoration"
+				/>
+			</div>
+			<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase">
+				Guaranteed Roadworthy Pass
+			</h2>
+			<p class="inline-block w-full text-xl">
+				Avoid failing your vehicle inspection due to dull, unsafe hadlamps.
+			</p>
+		</div>
+		<div
+			class="flex flex-col text-center justify-center p-3 items-center bg-fuchsia-500 rounded-3xl w-full md:min-w-60 my-0 mx-auto"
+		>
+			<div class="h-30 w-30 mb-3 rounded-3xl overflow-hidden">
+				<Image
+					class="w-full"
+					src={boost}
+					alt="save money with restoration at Cape Town Headlight Restoration"
+				/>
+			</div>
+			<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase">
+				Boost Car Value
+			</h2>
+			<p class="inline-block w-full text-xl">
+				Instantly refresh your car's look if you are planning to sell.
+			</p>
+		</div>
+		<div
+			class="flex flex-col text-center justify-center p-3 items-center bg-fuchsia-500 rounded-3xl w-full md:min-w-60 my-0 mx-auto"
+		>
+			<div class="h-30 w-30 mb-3 rounded-3xl overflow-hidden">
+				<Image
+					class="w-full"
+					src={save}
+					alt=" save money with restoration at Cape Town Headlight Restoration"
+				/>
+			</div>
+			<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase">
+				Fraction of the Cost
+			</h2>
+			<p class="inline-block w-full text-xl">
+				Restoring costs a fraction of buying brand-new OEM headlight housings.
+			</p>
+		</div>
+	</section>
 </div>

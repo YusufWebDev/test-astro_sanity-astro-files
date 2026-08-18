@@ -16,7 +16,7 @@ interface hero {
 ---
 
 <hero
-	class="max-w-90dvw max-h-75dvh grid grid-cols-1 bg-linear-to-bl from-blue-800 to-mist-900 rounded-4xl mt-3"
+	class="max-w-90dvw max-h-75dvh grid grid-cols-1 bg-linear-to-bl from-blue-800 to-mist-900 rounded-4xl mt-10"
 >
 	{
 		heroDetailsFromSanity ? (
@@ -32,21 +32,24 @@ interface hero {
 				</div>;
 			})
 		) : (
-			<div class="lg:grid lg:grid-cols-2  my-0 mx-auto gap-20 p-1 lg:p-4 flex flex-col-reverse ">
+			<div class=" max-w-50% lg:grid lg:grid-cols-2 my-0 mx-auto gap-20 p-1 lg:p-4 flex flex-col-reverse ">
 				<div class="flex flex-col items-center text-center lg:justify-center lg:items-start lg:text-left">
-					<h1 class="lg:text-6xl/18 text-5xl/16 mb-8 uppercase">
+					<h1 class="lg:text-6xl/18 text-5xl/16 mb-8 uppercase w-full inline-block">
 						Is your <span class="font-bold text-amber-400">night driving </span>
 						becoming
-						<span class="font-bold text-amber-400"> dangerous </span> due to
-						cloudy, yellowed, or hazy headlights?
+						<span class="font-bold text-amber-400">
+							{" "}
+							dangerous{" "}
+						</span> <br /> due to cloudy, yellowed,
+						<br /> or hazy headlights?
 					</h1>
-					<h2 class="text-3xl mb-8">
+					<h2 class="text-3xl mb-8 w-full inline-block">
 						<span class="font-bold text-amber-400">Don't spend thousands</span>{" "}
 						on brand-new headlight replacements !
 					</h2>
-					<h2 class="text-xl mb-8">
+					<h2 class="text-xl mb-8 w-full inline-block">
 						<p>Here at Cape Town Headlight Restorations </p>
-						<span class="font-bold text-amber-400">
+						<span class="font-bold text-amber-400 w-full inline-block">
 							We restore your faded lenses{" "}
 						</span>{" "}
 						back to a crystal-clear, factory finish.
@@ -60,7 +63,7 @@ interface hero {
 						</a>
 					</div>
 				</div>
-				<div class="sm:max-w-100 lg:max-w-150 bg-emerald-400  my-0 mx-auto rounded-3xl overflow-hidden items-center content-center">
+				<div class="sm:max-w-50% lg:max-w-150 bg-emerald-400  my-0 mx-auto rounded-3xl overflow-hidden items-center content-center">
 					<Image src={heroImageDefault} alt="Hero image of clean headlights " />
 				</div>
 			</div>
