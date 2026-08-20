@@ -7,77 +7,93 @@ import { Image } from "astro:assets";
 ---
 
 <div
-	class="bg-blue-600 flex flex-col mt-20 gap-6 px-5 text-center justify-around"
+	class="flex flex-col p-5 mt-20 mb-20 gap-5 px-5 text-center justify-around bg-linear-to-br to-blue-800 from-black rounded-4xl"
 >
-	<h1 class="text-5xl font-bold">Why Restore Your Headlights ?</h1>
+	<h1 class="text-5xl mb-10 font-bold">Why Restore Your Headlights ?</h1>
 	<section
-		class="w-full gap-5 text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+		class="w-full gap-20 px-5 text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
 	>
 		<div
-			class="flex flex-col justify-center p-3 items-center bg-fuchsia-500 rounded-3xl w-full md:min-w-60 my-0 mx-auto"
+			class="flex flex-col justify-center p-3 items-start rounded-3xl w-full md:min-w-60 my-0 mx-auto"
 		>
-			<div class="h-30 w-30 mb-3 rounded-3xl overflow-hidden">
-				<Image
-					class="w-full"
-					src={vision}
-					alt=" save money with restoration at Cape Town Headlight Restoration"
-				/>
+			<div class="flex flex-1 items-center justify-cente p-1 mb-5">
+				<div class="w-30 overflow-hidden">
+					<Image
+						class="w-full"
+						src={vision}
+						alt=" save money with restoration at Cape Town Headlight Restoration"
+					/>
+				</div>
+				<h2 class="font-semibold text-amber-400 text-3xl p-1 uppercase ml-2">
+					Maximum Night Visibiliy
+				</h2>
 			</div>
-			<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase">
-				Maximum Night Visibiliy
-			</h2>
-			<p class="inline-block w-full text-xl">
+			<p
+				class="inline-block w-full text-2xl text-left border-l pl-2 border-l-amber-300"
+			>
 				Clear lenses project upto 140% more light onto the road.
 			</p>
 		</div>
 		<div
-			class="flex flex-col text-center justify-center p-3 items-center bg-fuchsia-500 rounded-3xl w-full md:min-w-60 my-0 mx-auto"
+			class="flex flex-col justify-center p-3 items-start rounded-3xl w-full md:min-w-60 my-0 mx-auto"
 		>
-			<div class="h-30 w-30 mb-3 rounded-3xl overflow-hidden">
-				<Image
-					class="w-full"
-					src={roadworthy}
-					alt="save money with restoration at Cape Town Headlight Restoration"
-				/>
+			<div class="flex flex-1 items-center justify-center mb-5 p-1">
+				<div class="w-30 overflow-hidden">
+					<Image
+						class="w-full"
+						src={roadworthy}
+						alt="save money with restoration at Cape Town Headlight Restoration"
+					/>
+				</div>
+				<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase ml-2">
+					Roadworthy Pass
+				</h2>
 			</div>
-			<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase">
-				Guaranteed Roadworthy Pass
-			</h2>
-			<p class="inline-block w-full text-xl">
+			<p
+				class="inline-block w-full text-2xl text-left border-l pl-2 border-l-amber-300"
+			>
 				Avoid failing your vehicle inspection due to dull, unsafe hadlamps.
 			</p>
 		</div>
 		<div
-			class="flex flex-col text-center justify-center p-3 items-center bg-fuchsia-500 rounded-3xl w-full md:min-w-60 my-0 mx-auto"
+			class="flex flex-col justify-center p-3 items-start rounded-3xl w-full md:min-w-60 my-0 mx-auto"
 		>
-			<div class="h-30 w-30 mb-3 rounded-3xl overflow-hidden">
-				<Image
-					class="w-full"
-					src={boost}
-					alt="save money with restoration at Cape Town Headlight Restoration"
-				/>
+			<div class="flex flex-1 items-center justify-center mb-5 p-1">
+				<div class="w-30 overflow-hidden">
+					<Image
+						class="w-full"
+						src={boost}
+						alt="save money with restoration at Cape Town Headlight Restoration"
+					/>
+				</div>
+				<h2 class="font-semibold text-amber-400 text-3xl ml-2 mb-2 uppercase">
+					Boost Car Value
+				</h2>
 			</div>
-			<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase">
-				Boost Car Value
-			</h2>
-			<p class="inline-block w-full text-xl">
+			<p
+				class="inline-block w-full text-2xl text-left border-l pl-2 border-l-amber-300"
+			>
 				Instantly refresh your car's look if you are planning to sell.
 			</p>
 		</div>
 		<div
-			class="flex flex-col text-center justify-center p-3 items-center bg-fuchsia-500 rounded-3xl w-full md:min-w-60 my-0 mx-auto"
+			class="flex flex-col justify-center p-3 items-start rounded-3xl w-full md:min-w-60 my-0 mx-auto"
 		>
-			<div class="h-30 w-30 mb-3 rounded-3xl overflow-hidden">
-				<Image
-					class="w-full"
-					src={save}
-					alt=" save money with restoration at Cape Town Headlight Restoration"
-				/>
+			<div class="flex flex-1 items-center justify-center mb-5 p-1">
+				<div class="w-30 overflow-hidden">
+					<Image
+						class="w-full"
+						src={save}
+						alt=" save money with restoration at Cape Town Headlight Restoration"
+					/>
+				</div>
+				<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase ml-2">
+					Fraction of the Cost
+				</h2>
 			</div>
-			<h2 class="font-semibold text-amber-400 text-3xl mb-2 uppercase">
-				Fraction of the Cost
-			</h2>
-			<p class="inline-block w-full text-xl">
+			<p
+				class="inline-block w-full text-2xl text-left border-l pl-2 border-l-amber-300"
+			>
 				Restoring costs a fraction of buying brand-new OEM headlight housings.
 			</p>
 		</div>

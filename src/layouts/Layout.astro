@@ -38,7 +38,7 @@ import Footer from "../components/Footer.astro";
 		/* font-family: "Cabin", "Times New Roman"; */
 		color: #fffefe;
 		padding: 0 3rem;
-		width: 95dvw;
+		/* width: 95dvw; */
 		background-color: rgb(0, 0, 0);
 		display: flex;
 		flex-direction: column;
@@ -48,7 +48,7 @@ import Footer from "../components/Footer.astro";
 	}
 
 	.container {
-		width: 95dvw;
+		width: 100dvw;
 		padding: 0 5rem;
 		display: flex;
 		flex-direction: row;
@@ -56,18 +56,29 @@ import Footer from "../components/Footer.astro";
 		align-items: center;
 		align-content: center;
 		margin: 0 auto;
-		background-color: rgb(208, 61, 61);
+		/* background-color: rgb(208, 61, 61); */
 	}
 
 	.header {
 		/* background-color: blue; */
-		width: 95dvw;
-		margin-top: 1rem;
-		padding: 2rem 1rem;
+		/* width: 95dvw; */
+		/* margin-top: 1rem; */
+		padding: 1rem;
+
+		background: #00fff7;
+		background: linear-gradient(
+			90deg,
+			rgba(0, 255, 247, 0.76) 0%,
+			rgba(9, 9, 121, 1) 35%,
+			rgba(1, 53, 61, 1) 100%
+		);
+
+		border-bottom-left-radius: 2rem;
+		border-bottom-right-radius: 2rem;
 		/* height: 6rem; */
 	}
 	.headerImg {
-		width: 200px;
+		width: 230px;
 		height: 100%;
 	}
 	.headerImg > img {
@@ -84,7 +95,7 @@ import Footer from "../components/Footer.astro";
 	}
 
 	.grid-container {
-		width: 95dvw;
+		/* width: 95dvw; */
 		margin: 0 auto;
 		margin-top: 3rem;
 		padding: 1rem 2rem;
@@ -94,9 +105,9 @@ import Footer from "../components/Footer.astro";
 		justify-content: center;
 	}
 	.product_grid {
-		width: 95dvw;
+		width: 90dvw;
 		padding: 0 2rem;
-		background-color: rgb(161, 139, 193);
+		/* background-color: rgb(161, 139, 193); */
 		/* padding: 1rem; */
 		gap: 1rem;
 		display: grid;
@@ -108,7 +119,7 @@ import Footer from "../components/Footer.astro";
 
 	.card {
 		width: 20rem;
-		background-color: rgb(245, 225, 200);
+		/* background-color: rgb(245, 225, 200); */
 		/* max-height: 400px; */
 		border: #fff 5px solid;
 		border-radius: 1rem;
@@ -121,6 +132,7 @@ import Footer from "../components/Footer.astro";
 		color: black;
 	}
 	.card-title {
+		color: #fff;
 		text-align: center;
 		margin-bottom: 1.5rem;
 		overflow-wrap: break-word;
@@ -135,10 +147,12 @@ import Footer from "../components/Footer.astro";
 		height: auto;
 	}
 	.card-price {
+		color: #fff;
 		margin-top: 1rem;
 	}
 
 	.card-description {
+		color: #fff;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 	}

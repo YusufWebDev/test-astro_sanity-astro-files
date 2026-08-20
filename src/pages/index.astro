@@ -6,6 +6,7 @@ import "../styles/global.css";
 import HeroSection from "../components/HeroSection.astro";
 import QuestionStatementBanner from "../components/QuestionStatementBanner.astro";
 import RestoreSection from "../components/RestoreSection.astro";
+import ProcessSteps from "../components/ProcessSteps.astro";
 
 interface Product {
 	name: string;
@@ -53,4 +54,6 @@ const filteredProdcts = Products.filter((p: Product) => p.showOnSite === true);
 		</div>
 	</div>
 	<RestoreSection />
+	<ProcessSteps />
+	<QuestionStatementBanner questionStatement="We come to you !" />
 </Layout>
