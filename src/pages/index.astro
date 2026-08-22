@@ -1,28 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { sanityClient } from "sanity:client";
-import urlFor from "../utils/sanityImageUrl.js";
+// import { sanityClient } from "sanity:client";
+// import urlFor from "../utils/sanityImageUrl.js";
 import "../styles/global.css";
 import HeroSection from "../components/HeroSection.astro";
 import QuestionStatementBanner from "../components/QuestionStatementBanner.astro";
 import RestoreSection from "../components/RestoreSection.astro";
 import ProcessSteps from "../components/ProcessSteps.astro";
 import Pricing from "../components/Pricing.astro";
+import Contact from "../components/Contact.astro";
 
-interface Product {
-	name: string;
-	price: number;
-	description: string;
-	showOnSite: boolean;
-	image: string;
-	alt_Text: string;
-}
-// FETCHING ALL PRODUCT TYPES FROM SANITY.
-const PRODUCT_QUERY = `*[ _type == 'product']{name, price, description, showOnSite, image, alt_Text}`;
-const Products = await sanityClient.fetch(PRODUCT_QUERY);
+// interface Product {
+// 	name: string;
+// 	price: number;
+// 	description: string;
+// 	showOnSite: boolean;
+// 	image: string;
+// 	alt_Text: string;
+// }
+// // FETCHING ALL PRODUCT TYPES FROM SANITY.
+// const PRODUCT_QUERY = `*[ _type == 'product']{name, price, description, showOnSite, image, alt_Text}`;
+// const Products = await sanityClient.fetch(PRODUCT_QUERY);
 
 // console.log(Products)
-const filteredProdcts = Products.filter((p: Product) => p.showOnSite === true);
+// const filteredProdcts = Products.filter((p: Product) => p.showOnSite === true);
 // console.log(filteredProdcts)
 ---
 
@@ -31,7 +32,7 @@ const filteredProdcts = Products.filter((p: Product) => p.showOnSite === true);
 	<QuestionStatementBanner
 		questionStatement="Tired of struggling to see the road at night ?"
 	/>
-	<div class="grid-container">
+	<!-- <div class="grid-container">
 		<div class="product_grid">
 			{
 				filteredProdcts.map((p: Product) => (
@@ -53,10 +54,11 @@ const filteredProdcts = Products.filter((p: Product) => p.showOnSite === true);
 				))
 			}
 		</div>
-	</div>
+	</div> -->
 	<RestoreSection />
 	<ProcessSteps />
 	<QuestionStatementBanner questionStatement="We come to you !" />
 	<Pricing />
 	<QuestionStatementBanner questionStatement="Ready to See Clear Again?" />
+	<Contact />
 </Layout>

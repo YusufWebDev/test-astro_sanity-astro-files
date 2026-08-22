@@ -1,72 +1,66 @@
 ---
 import { sanityClient } from "sanity:client";
-import urlFor from "../utils/sanityImageUrl.js";
+// import urlFor from "../utils/sanityImageUrl.js";
 import { Image } from "astro:assets";
 import heroImageDefault from "../assets/hero2.jpg";
-const hero_QUERY = `*[ _type == 'heroSectionDetails']{heading, subHeading, heroImage, alt_Text}`;
-const heroDetails = await sanityClient.fetch(hero_QUERY);
-const heroDetailsFromSanity = false;
+// const hero_QUERY = `*[ _type == 'heroSectionDetails']{heading, subHeading, heroImage, alt_Text}`;
+// const heroDetails = await sanityClient.fetch(hero_QUERY);
+// const heroDetailsFromSanity = false;
 
-interface hero {
-	heroHeading: "string";
-	herSubHeading: "string";
-	heroImage: "string";
-	heroImageAlt_Text: "string";
-}
+// interface hero {
+// 	heroHeading: "string";
+// 	herSubHeading: "string";
+// 	heroImage: "string";
+// 	heroImageAlt_Text: "string";
+// }
 ---
 
 <hero
 	class="max-w-95dvw max-h-75dvh grid grid-cols-1 bg-linear-to-bl from-blue-800 to-mist-900 rounded-4xl mt-10"
 >
-	{
-		heroDetailsFromSanity ? (
-			heroDetails.map((d: hero) => {
-				<div>
-					<div>
-						<h1>{d.heroHeading}</h1>
-						<h2>{d.herSubHeading}</h2>
-					</div>
-					<div>
-						<img src={urlFor(d.heroImage)} alt={d.heroImageAlt_Text} />
-					</div>
-				</div>;
-			})
-		) : (
-			<div class=" max-w-50% lg:grid lg:grid-cols-2 my-0 mx-auto gap-10 lg:gap-20 p-5 lg:pr-4 lg:pl-16 flex flex-col-reverse ">
-				<div class="flex flex-col items-center text-center lg:justify-center lg:items-start lg:text-left">
-					<h1 class="lg:text-6xl/18 md:text-5xl/16 text-4xl/14 mb-8 uppercase w-full inline-block">
-						Is your <span class="font-bold text-amber-400">night driving </span>
-						becoming
-						<span class="font-bold text-amber-400">
-							{" "}
-							dangerous{" "}
-						</span> <br /> due to cloudy, yellowed,
-						<br /> or hazy headlights?
-					</h1>
-					<h2 class="text-3xl mb-8 w-full inline-block">
-						<span class="font-bold text-amber-400">Don't spend thousands</span>{" "}
-						on brand-new <br /> headlight replacements !
-					</h2>
-					<h2 class="text-xl mb-8 w-full inline-block">
-						<p>Here at Cape Town Headlight Restorations </p>
-						<span class="font-bold text-amber-400 w-full inline-block">
-							We restore your faded lenses{" "}
-						</span>{" "}
-						back to a crystal-clear, factory finish.
-					</h2>
-					<div class="mb-6">
-						<a
-							href="#"
-							class="text-2xl bg-amber-600 text-amber-50 rounded-xl hover:pointer px-5 py-2"
-						>
-							<span>Book Now!</span>
-						</a>
-					</div>
-				</div>
-				<div class=" w-75 md:w-100 lg:w-full my-0 mx-auto rounded-3xl overflow-hidden items-center content-center">
-					<Image src={heroImageDefault} alt="Hero image of clean headlights " />
-				</div>
+	<div
+		class="max-w-50% lg:grid lg:grid-cols-2 my-0 mx-auto gap-10 lg:gap-20 p-5 lg:pr-4 lg:pl-16 flex flex-col-reverse"
+	>
+		<div
+			class="flex flex-col items-center text-center lg:justify-center lg:items-start lg:text-left"
+		>
+			<h1
+				class="lg:text-6xl/18 md:text-5xl/16 text-4xl/14 mb-8 uppercase w-full inline-block"
+			>
+				Is your <span class="font-bold text-amber-400">night driving </span>
+				becoming
+				<span class="font-bold text-amber-400">
+					{" "}
+					dangerous{" "}
+				</span>
+				<br /> due to cloudy, yellowed,
+				<br /> or hazy headlights?
+			</h1>
+			<h2 class="text-3xl mb-8 w-full inline-block">
+				<span class="font-bold text-amber-400">Don't spend thousands</span>{" "}
+				on brand-new <br /> headlight replacements !
+			</h2>
+			<h2 class="text-xl mb-8 w-full inline-block">
+				<p>Here at Cape Town Headlight Restorations</p>
+				<span class="font-bold text-amber-400 w-full inline-block">
+					We restore your faded lenses{" "}
+				</span>{" "}
+				back to a crystal-clear, factory finish.
+			</h2>
+			<div class="mb-6">
+				<a
+					href="#"
+					class="text-2xl bg-amber-600 text-amber-50 rounded-xl hover:pointer px-5 py-2"
+				>
+					<span>Book Now!</span>
+				</a>
 			</div>
-		)
-	}
+		</div>
+		<div
+			class="w-75 md:w-100 lg:w-full my-0 mx-auto rounded-3xl overflow-hidden items-center content-center"
+		>
+			<Image src={heroImageDefault} alt="Hero image of clean headlights " />
+		</div>
+	</div>
+	)
 </hero>
